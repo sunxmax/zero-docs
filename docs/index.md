@@ -14,15 +14,15 @@ hero:
       text: 时光
       link: /time/index
 
-features:
-  - title: 记录
-    icon: 📝
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: 分享
-    icon: 🎨
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: 总结
-    icon: 💎
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+#features:
+#  - title: 记录
+#    icon: 📝
+#    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+#  - title: 分享
+#    icon: 🎨
+#    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+#  - title: 总结
+#    icon: 💎
+#    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
 

@@ -2,12 +2,13 @@ import {defineConfig} from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-    title: "ZERO",
+    title: "zero",
     head: [['link', {rel: 'icon', href: '/favicon.ico'}]],
     description: "记录与分享",
 
     themeConfig: {
         logo: '/logo.svg',
+        siteTitle: false,
         // https://vitepress.dev/reference/default-theme-config
         nav: [
             {text: '首页', link: '/'},
