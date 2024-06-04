@@ -136,3 +136,13 @@
 .DocSearch {
     --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
+
+/**
+ * Custom Font
+ * -------------------------------------------------------------------------- */
+
+:root {
+    --vp-font-family-base: -apple-system, BlinkMacSystemFont, 'Roboto', JetBrains Mono, Noto Sans SC, sans-serif; /* normal text font */
+    --vp-font-family-mono: JetBrains Mono, Noto Sans SC, sans-serif; /* code font */
+
+}

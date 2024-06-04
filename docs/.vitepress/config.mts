@@ -3,24 +3,39 @@ import {defineConfig} from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
     title: "zero",
-    head: [['link', {rel: 'icon', href: '/favicon.ico'}]],
+    head: [
+        ['link', {rel: 'icon', href: '/favicon.ico'}],
+        ['link', {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Noto+Sans+SC:wght@100..900&display=swap'}],
+    ],
+    // <link href="https://fonts.cdnfonts.com/css/jetbrains-mono" rel="stylesheet">
+
     description: "记录与分享",
 
+    lastUpdated: true,
+
     themeConfig: {
+        // https://vitepress.dev/reference/default-theme-config
         logo: '/logo.svg',
         siteTitle: false,
-        // https://vitepress.dev/reference/default-theme-config
         nav: [
             {text: '首页', link: '/'},
             {text: '拾遗', link: '/water/tool/Arthas'},
             {text: '时光', link: '/time/index'},
         ],
 
+        lastUpdated: {
+            text: '最后更新于'
+        },
+
+        socialLinks: [
+            {icon: 'github', link: 'https://github.com/sunxmax'}
+        ],
+
         sidebar: {
             '/water/': [
                 {
                     text: '工具',
-                    link: '/water/index',
+                    collapsed: true,
                     items: [
                         {text: 'Arthas', link: '/water/tool/Arthas'},
                         {text: 'Homebrew', link: '/water/tool/Homebrew'}
@@ -30,9 +45,20 @@ export default defineConfig({
             'time': [],
         },
 
-        socialLinks: [
-            {icon: 'github', link: 'https://github.com/sunxmax'}
-        ],
+        editLinks: true,
+        editLink: {
+            pattern: 'https://github.com/sunxmax/zero-docs/edit/main/docs/:path',
+            text: '在 GitHub 上编辑此页面'
+        },
+
+        docFooter: {
+            prev: '上一页',
+            next: '下一页'
+        },
+
+        outline: {
+            label: '页面导航'
+        },
 
         footer: {
             message: 'Released under the MIT License.',
@@ -62,7 +88,5 @@ export default defineConfig({
                 }
             }
         },
-
     },
-
 })

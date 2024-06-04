@@ -1,6 +1,6 @@
-## Homebrew 安装使用
+# Homebrew 安装使用
 
-### 基本命令
+## 基本命令
 
 ```shell
 # 查看 homebrew 版本
@@ -19,7 +19,7 @@ brew list
 brew search xxx
 ```
 
-### 安装卸载
+## 安装卸载
 
 ```shell
 # 安装软件
@@ -36,7 +36,7 @@ brew cask uninstall xxx
 which xxx
 ```
 
-### Casks 使用
+## Casks 使用
 
 > [官方教程](https://github.com/Homebrew/homebrew-cask/blob/master/USAGE.md)
 
@@ -45,8 +45,7 @@ which xxx
 brew cask install <url> 
 ```
 
-
-### 配置国内源
+## 配置国内源
 
 ```shell
 # brew 程序本身，Homebrew/Linuxbrew 相同
@@ -89,7 +88,7 @@ sudo ln -sfn /usr/local/opt/openjdk@8/libexec/openjdk.jdk /Library/Java/JavaVirt
 sudo ln -sfn /usr/local/opt/openjdk@17/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-17.jdk
 ```
 
-### NVM 安装  
+## NVM 安装  
   
 ```bash  
 export NVM_DIR="$HOME/.nvm"[ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && . "$(brew --prefix)/opt/nvm/nvm.sh" # This loads nvm  
