@@ -144,5 +144,8 @@
 :root {
     --vp-font-family-base: -apple-system, BlinkMacSystemFont, 'Roboto', JetBrains Mono, Noto Sans SC, sans-serif; /* normal text font */
     --vp-font-family-mono: JetBrains Mono, Noto Sans SC, sans-serif; /* code font */
+}
 
+body{
+    font-size: 15px;
 }
