@@ -5,7 +5,10 @@ export default defineConfig({
     title: "zero",
     head: [
         ['link', {rel: 'icon', href: '/favicon.ico'}],
-        ['link', {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Noto+Sans+SC:wght@100..900&display=swap'}],
+        ['link', {
+            rel: 'stylesheet',
+            href: 'https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Noto+Sans+SC:wght@100..900&display=swap'
+        }],
     ],
     // <link href="https://fonts.cdnfonts.com/css/jetbrains-mono" rel="stylesheet">
 
@@ -38,7 +41,8 @@ export default defineConfig({
                     collapsed: true,
                     items: [
                         {text: 'Arthas', link: '/water/tool/Arthas'},
-                        {text: 'Homebrew', link: '/water/tool/Homebrew'}
+                        {text: 'Homebrew', link: '/water/tool/Homebrew'},
+                        {text: 'Docker', link: '/water/tool/Docker'},
                     ]
                 }
             ],
@@ -57,7 +61,8 @@ export default defineConfig({
         },
 
         outline: {
-            label: '页面导航'
+            label: '页面导航',
+            level: [2,3]
         },
 
         footer: {
