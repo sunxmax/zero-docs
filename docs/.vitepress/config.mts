@@ -44,6 +44,13 @@ export default defineConfig({
                         {text: 'Homebrew', link: '/water/tool/Homebrew'},
                         {text: 'Docker', link: '/water/tool/Docker'},
                     ]
+                },
+                {
+                    text: 'SQL',
+                    collapsed: true,
+                    items: [
+                        {text: 'SQL Server', link: '/water/sql/SQL Server'},
+                    ]
                 }
             ],
             'time': [],

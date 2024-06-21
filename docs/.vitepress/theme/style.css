@@ -146,6 +146,11 @@
     --vp-font-family-mono: JetBrains Mono, Noto Sans SC, sans-serif; /* code font */
 }
 
-body{
+body {
     font-size: 15px;
+    overflow: auto; /* 初始状态下隐藏滚动条 */
+}
+
+body::-webkit-scrollbar {
+    display: none; /* 隐藏滚动条 */
 }
