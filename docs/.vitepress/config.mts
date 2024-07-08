@@ -43,6 +43,7 @@ export default defineConfig({
                         {text: 'Arthas', link: '/water/tool/Arthas'},
                         {text: 'Homebrew', link: '/water/tool/Homebrew'},
                         {text: 'Docker', link: '/water/tool/Docker'},
+                        {text: 'Nginx', link: '/water/tool/Nginx'},
                     ]
                 },
                 {
