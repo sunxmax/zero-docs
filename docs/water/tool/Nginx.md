@@ -24,6 +24,40 @@ main # 全局配置
 
 ## 配置
 
+### 添加 SSL
+
+**配置**
+
+```shell
+server {
+    listen 443 ssl;
+    server_name example.com;
+
+    ssl_certificate /etc/nginx/ssl/example.com.crt;
+    ssl_certificate_key /etc/nginx/ssl/example.com.key;
+
+    # SSL 优化配置
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_prefer_server_ciphers on;
+    ssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384;
+
+    # HSTS (可选，但推荐)
+    add_header Strict-Transport-Security "max-age=63072000" always;
+
+    # 其他服务器配置...
+}
+```
+
+**HTTP 重定向 HTTPS（可选，但推荐）**
+> 添加一个额外的服务器块来重定向HTTP流量到HTTPS：
+```shell
+server {
+    listen 80;
+    server_name example.com;
+    return 301 https://$server_name$request_uri;
+}
+```
+
 ### 静态服务
 
 > 通过 `Nginx` 访问静态文件，可在 `server` 模块中进行配置，有以下几种种方式：
