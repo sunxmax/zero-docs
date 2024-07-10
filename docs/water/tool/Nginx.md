@@ -4,10 +4,10 @@
 
 [下载地址](http://nginx.org/en/download.html)，下载解压后即可使用
 
-## 结构  
-  
-Nginx 的配置结构图  
-  
+## 结构
+
+Nginx 的配置结构图
+
 ```  
 main # 全局配置  
 ├── events # 配置网络连接  
@@ -28,53 +28,85 @@ main # 全局配置
 
 > 通过 `Nginx` 访问静态文件，可在 `server` 模块中进行配置，有以下几种种方式：
 
-- **通过 `alias` 关键字**
+1. 使用 `root` 指令：
 
-> 通过浏览器访问 `yourdomain.com/static/file.txt`，则访问的文件地址为：`/path/to/your/static/files/file.txt`
+   配置：
+   ```nginx
+   server {
+       listen 80;
+       server_name example.com;
+       root /var/www/example.com;
+   }
+   ```
 
-```bash
-server {
-  listen 80;
-  server_name yourdomain.com www.yourdomain.com;  # 修改为你的域名
+   文件路径和URL关系：
+    - 如果访问 http://example.com/image.jpg
+    - Nginx会查找文件 /var/www/example.com/image.jpg
 
-  location /static/ {
-    alias /path/to/your/static/files;  # 修改为你的静态文件目录路径
-    expires 30d;
-  }
+   root指令会将URL的完整路径附加到指定的根目录后。
 
-  # 其他配置项...
-  
-}
-```
+2. 使用 `alias` 指令：
 
-- **使用 `root` 关键字**
+   配置：
+   ```nginx
+   location /static/ {
+       alias /var/www/files/;
+   }
+   ```
 
-> 通过浏览器访问 `yourdomain.com/static/file.txt`，则访问的文件地址为：`/path/to/your/static/files/static/file.txt`
+   文件路径和URL关系：
+    - 如果访问 http://example.com/static/image.jpg
+    - Nginx会查找文件 /var/www/files/image.jpg
 
-```bash
-server /static/ {
-  listen 80;
-  server_name yourdomain.com www.yourdomain.com;  # 修改为你的域名
+   alias会用指定的路径替换location匹配的部分。
 
-  root /path/to/your/static/files;  # 修改为你的静态文件目录路径
-  index index.html;
+3. 使用 `try_files` 指令：
 
-  # 其他配置项...
-}
+   配置：
+   ```nginx
+   location / {
+       root /var/www/example.com;
+       try_files $uri $uri/ /index.html;
+   }
+   ```
 
-```
+   文件路径和URL关系：
+    - 如果访问 http://example.com/page
+    - Nginx会依次尝试：
+        1. /var/www/example.com/page
+        2. /var/www/example.com/page/index.html
+        3. 如果都不存在，则返回 /var/www/example.com/index.html
 
-- **使用 `try_files` 关键字**
+4. 为特定文件类型配置：
 
-```bash
-server {
-  listen 80;
-  server_name yourdomain.com www.yourdomain.com;  # 修改为你的域名
+   配置：
+   ```nginx
+   location ~* \.(jpg|jpeg|png|gif)$ {
+       root /var/www/images;
+       expires 30d;
+   }
+   ```
 
-  location /static/ {
-    try_files $uri $uri/ /path/to/your/static/files/$uri;  # 修改为你的静态文件目录路径
-  }
+   文件路径和URL关系：
+    - 如果访问 http://example.com/photos/image.jpg
+    - Nginx会查找文件 /var/www/images/photos/image.jpg
 
-  # 其他配置项...
-}
-```
+5. 使用 `autoindex`：
+
+   配置：
+   ```nginx
+   location /downloads/ {
+       root /var/www;
+       autoindex on;
+   }
+   ```
+
+   文件路径和URL关系：
+    - 如果访问 http://example.com/downloads/
+    - Nginx会显示 /var/www/downloads/ 目录的内容列表
+
+注意事项：
+
+- 使用root时，完整的URL路径会被附加到root指定的路径后。
+- 使用alias时，只有location匹配后的部分会被附加到alias指定的路径后。
+- 路径末尾的斜杠很重要，可能会影响文件的查找。
