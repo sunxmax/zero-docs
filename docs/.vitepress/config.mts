@@ -26,14 +26,6 @@ export default defineConfig({
             {text: '时光', link: '/time/index'},
         ],
 
-        lastUpdated: {
-            text: '最后更新于'
-        },
-
-        socialLinks: [
-            {icon: 'github', link: 'https://github.com/sunxmax'}
-        ],
-
         sidebar: {
             '/water/': [
                 {
@@ -47,7 +39,7 @@ export default defineConfig({
                     ]
                 },
                 {
-                    text: 'SQL',
+                    text: '数据库',
                     collapsed: true,
                     items: [
                         {text: 'SQL Server', link: '/water/sql/SQL Server'},
@@ -63,6 +55,14 @@ export default defineConfig({
             ],
             'time': [],
         },
+
+        lastUpdated: {
+            text: '最后更新于'
+        },
+
+        socialLinks: [
+            {icon: 'github', link: 'https://github.com/sunxmax'}
+        ],
 
         editLinks: true,
         editLink: {

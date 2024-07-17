@@ -10,7 +10,7 @@
 
 `Kafka` 集群包含一个或多个服务器，这种服务器被称为 `Broker`。
 
-### topic
+### Topic
 
 > 主题
 
@@ -29,13 +29,13 @@
 
 `Consumer Group` 每个 Consumer 属于一个特定的 `Consumer Group`（可为每个 `Consumer` 指定 `Consumer Group`， 若不指定 `Consumer Group` 则属于默认的 group）。
 
-### partition
+### Partition
 
 > 分区
 
 一个 `topic`（主题） 可以包含多个 `partition`（分区），且风区可分布在不同的 `broker`（代理）上
 
-### replica
+### Replica
 
 > 副本
 
