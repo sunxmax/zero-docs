@@ -52,7 +52,14 @@ export default defineConfig({
                     items: [
                         {text: 'SQL Server', link: '/water/sql/SQL Server'},
                     ]
-                }
+                },
+                {
+                    text: '消息队列',
+                    collapsed: true,
+                    items: [
+                        {text: 'Kafka', link: '/water/mq/kafka'},
+                    ]
+                },
             ],
             'time': [],
         },
