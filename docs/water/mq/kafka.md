@@ -29,11 +29,9 @@
 
 ### Partition（分区）
 
-> 
-
 每个主题可以划分为多个分区，以提高并行度和可扩展性。
 
-一个 `topic`（主题） 可以包含多个 `partition`（分区），且风区可分布在不同的 `broker`（代理）上
+一个 `topic`（主题） 可以包含多个 `partition`（分区），且分区可分布在不同的 `broker`（代理）上
 
 ### Replica（副本）
 
@@ -42,11 +40,14 @@
 
 如果 `leader` 副本所在的 `breaker` 突然挂了，会通过 `follower` 副本选举出新的 `leader` 副本。
 
-> 多分区 （`partition`） 和 多副本（`replica`）机制的好处？
->
-> 多分区：给 `topic` 指定多个 `partition` 分布在不同的 `broker` 上，可提供较好的并发性（负载均衡）。
->
-> 多副本：指定 `partition` 多个 `replica` 数，可提高消息的可靠性和容灾能力，但多副本增加了存储成本。
+::: details 多分区与多副本
+
+多分区 （`partition`） 和 多副本（`replica`）机制的好处？
+
+- 多分区：给 `topic` 指定多个 `partition` 分布在不同的 `broker` 上，可提供较好的并发性（负载均衡）。
+- 多副本：指定 `partition` 多个 `replica` 数，可提高消息的可靠性和容灾能力，但多副本增加了存储成本。
+
+:::
 
 ## 主要特性
 
