@@ -4,31 +4,29 @@
 
 ## 基本概念
 
-- **Broker**：代理
+### Broker（代理）
 
 `Kafka` 集群包含一个或多个服务器，这种服务器被称为 `Broker`。
 
-- **topic**：主题
+### topic（主题）
 
 每条发布到 `Kafka` 集群的消息都有一个类别，这个类别被称为 `Topic`。
 
 物理上不同 `Topic` 的消息分开存储，逻辑上一个 Topic 的消息虽然保存于一个或多个 `Broker` 上，但用户只需指定消息的 Topic
 即可生产或消费数据而不必关心数据存于何处。
 
-- **Producer**：生产者
-- **Consumer**：消费者
+### Producer（生产者）
+### Consumer（消费者）
 
-`Consumer Group` 每个 Consumer 属于一个特定的 `Consumer Group`（可为每个 `Consumer` 指定 `Consumer Group`
-，若不指定 `Consumer Group` 则属于默认的 group）。
+`Consumer Group` 每个 Consumer 属于一个特定的 `Consumer Group`（可为每个 `Consumer` 指定 `Consumer Group`， 若不指定 `Consumer Group` 则属于默认的 group）。
 
-- **partition**：分区
+### partition（分区）
 
 一个 `topic`（主题） 可以包含多个 `partition`（分区），且风区可分布在不同的 `broker`（代理）上
 
-- **replica**：副本
+### replica（副本）
 
-副本分为：`leader` 副本和 `follower` 副本，生产者和消费者只和 `leader` 副本进行通信，`follower` 副本通过拉取 `leader`
-副本进行同步。
+副本分为：`leader` 副本和 `follower` 副本，生产者和消费者只和 `leader` 副本进行通信，`follower` 副本通过拉取 `leader`副本进行同步。
 
 如果 `leader` 副本所在的 `breaker` 突然挂了，会通过 `follower` 副本选举出新的 `leader` 副本。
 
