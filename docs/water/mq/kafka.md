@@ -4,9 +4,7 @@
 
 ## 基本概念
 
-### Broker
-
-> 集群
+### Broker（集群）
 
 `Kafka` 集群由一个或多个 `Broker` 组成,每个 `Broker` 是一个独立的 `Kafka` 服务器。
 
