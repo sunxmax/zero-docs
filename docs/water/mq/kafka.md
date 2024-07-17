@@ -32,7 +32,8 @@
 
 消费者从 Kafka 主题中读取数据。
 
-`Consumer Group` 每个 Consumer 属于一个特定的 `Consumer Group`（可为每个 `Consumer` 指定 `Consumer Group`， 若不指定 `Consumer Group` 则属于默认的 group）。
+`Consumer Group` 每个 Consumer 属于一个特定的 `Consumer Group`（可为每个 `Consumer` 指定 `Consumer Group`，
+若不指定 `Consumer Group` 则属于默认的 group）。
 
 ### Partition
 
@@ -46,7 +47,8 @@
 
 > 副本
 
-副本分为：`leader` 副本和 `follower` 副本，生产者和消费者只和 `leader` 副本进行通信，`follower` 副本通过拉取 `leader`副本进行同步。
+副本分为：`leader` 副本和 `follower` 副本，生产者和消费者只和 `leader` 副本进行通信，`follower` 副本通过拉取 `leader`
+副本进行同步。
 
 如果 `leader` 副本所在的 `breaker` 突然挂了，会通过 `follower` 副本选举出新的 `leader` 副本。
 
@@ -121,25 +123,30 @@ networks:
 
 1. 如何获取 topic 主题的列表？
 
-    ```java
+    ```shell
     bin/kafka-topics.sh --list --zookeeper localhost:2181
     ```
 2. 生产者和消费者的命令行是什么？
 
-   ```java
-   生产者在主题上发布消息：
+   ```shell
+   # 生产者在主题上发布消息：
    bin/kafka-console-producer.sh --broker-list 192.168.43.49:9092 --topic
    Hello-Kafka
-   注意这里的 IP 是 server.properties 中的 listeners 的配置。接下来每个新行就是
-   输入一条新消息。
-   消费者接受消息：
+   # 注意这里的 IP 是 server.properties 中的 listeners 的配置。接下来每个新行就是
+   # 输入一条新消息。
+   # 消费者接受消息：
    bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic
    Hello-Kafka --from-beginning
    ```
 
 3. consumer 是推还是拉？
 
-    在这方面，`Kafka` 遵循了一种大部分消息系统共同的传统的设计：`producer` 将消息推送到 `broker`，`consumer` 从 `broker` 拉取消息。`push` 缺点：由 `broker` 决定消息推送的速率，对于不同消费速率的 consumer 就不太好处理了。当 `broker`推送的速率远大于 `consumer` 消费的速率时，`consumer` 恐怕就要崩溃了。`Pull` 优点：`consumer` 可以自主决定是否批量的从 `broker` 拉取数据。Pull 模式下 `consumer` 就可以根据自己的消费能力去决定这些策略。`Pull` 缺点：如果 `broker` 没有可供消费的消息，将导致 `consumer` 不断在循环中轮询，直到新消息到达。为了避免这点，`Kafka` 有个参数可以让 `consumer` 阻塞知道新消息到达。
+   在这方面，`Kafka` 遵循了一种大部分消息系统共同的传统的设计：`producer` 将消息推送到 `broker`，`consumer` 从 `broker`
+   拉取消息。`push` 缺点：由 `broker` 决定消息推送的速率，对于不同消费速率的 consumer 就不太好处理了。当 `broker`
+   推送的速率远大于 `consumer` 消费的速率时，`consumer` 恐怕就要崩溃了。`Pull` 优点：`consumer`
+   可以自主决定是否批量的从 `broker` 拉取数据。Pull 模式下 `consumer` 就可以根据自己的消费能力去决定这些策略。`Pull`
+   缺点：如果 `broker` 没有可供消费的消息，将导致 `consumer` 不断在循环中轮询，直到新消息到达。为了避免这点，`Kafka`
+   有个参数可以让 `consumer` 阻塞知道新消息到达。
 
 4. 讲讲 kafka 维护消费状态跟踪的方法？
 5. 讲一下主从同步？
@@ -154,7 +161,8 @@ networks:
 
 14. 如何控制消费的位置？
 
-    `kafka` 使用 `seek(TopicPartition, long)` 指定新的消费位置。用于查找服务器保留的最早和最新的 `offset` 的特殊的方法也可用 `seekToBeginning(Collection)` 和 `seekToEnd(Collection)`
+    `kafka` 使用 `seek(TopicPartition, long)` 指定新的消费位置。用于查找服务器保留的最早和最新的 `offset`
+    的特殊的方法也可用 `seekToBeginning(Collection)` 和 `seekToEnd(Collection)`
 
 15. kafka 分布式（不是单机）的情况下，如何保证消息的顺序消费？
 
