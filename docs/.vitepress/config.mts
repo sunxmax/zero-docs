@@ -36,6 +36,8 @@ export default defineConfig({
                         {text: 'Homebrew', link: '/water/tool/Homebrew'},
                         {text: 'Docker', link: '/water/tool/Docker'},
                         {text: 'Nginx', link: '/water/tool/Nginx'},
+                        {text: 'Git', link: '/water/tool/Git'},
+
                     ]
                 },
                 {
