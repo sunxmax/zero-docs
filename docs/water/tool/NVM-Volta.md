@@ -1,6 +1,6 @@
 # NVM 和 Volta
 
-> Volta 和 NVM 都是用于管理 Node.js 版本的工具
+Volta 和 NVM 都是用于管理 Node.js 版本的工具
 
 ## NVM
 
