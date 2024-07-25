@@ -41,6 +41,7 @@ export default defineConfig({
                         {text: 'Docker', link: '/water/tool/Docker'},
                         {text: 'Nginx', link: '/water/tool/Nginx'},
                         {text: 'Git', link: '/water/tool/Git'},
+                        {text: 'NVM/Volta', link: '/water/tool/NVM-Volta'},
 
                     ]
                 },
