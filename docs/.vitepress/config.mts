@@ -9,7 +9,9 @@ export default defineConfig({
             rel: 'stylesheet',
             href: 'https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Noto+Sans+SC:wght@100..900&display=swap'
         }],
-        ["script", { src: "/_vercel/insights/script.js", defer: true }]
+        ["script", { src: "/_vercel/insights/script.js", defer: true }],
+        ["script", { src: "/_vercel/speed-insights/script.js", defer: true }],
+
         ,
     ],
     // <link href="https://fonts.cdnfonts.com/css/jetbrains-mono" rel="stylesheet">
