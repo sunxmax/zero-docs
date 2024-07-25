@@ -3,7 +3,6 @@ import { h } from 'vue'
 import type { Theme } from 'vitepress'
 // import DefaultTheme from 'vitepress/theme'
 import DefaultTheme from 'vitepress/theme-without-fonts'
-import { inject } from "@vercel/analytics"
 import './style.css'
 
 export default {
