@@ -130,18 +130,18 @@ git reset --soft HEAD~1
 >
 > 注意，这个命令仅仅是撤回 `commit` 操作，写的代码仍然保留
 >
->>`--mixed`
->>
->> 不删除工作空间改动代码，撤销 `commit`，并且撤销 `git add .` 操作
->>
->> 这个为默认参数，`git reset --mixed HEAD^` 和 `git reset HEAD^` 效果是一样的。
+>`--mixed`
 >
->> `--soft`
->>
->> 不删除工作空间改动代码，撤销 `commit`，不撤销 `git add .`
+> 不删除工作空间改动代码，撤销 `commit`，并且撤销 `git add .` 操作
 >
->> `--hard`
->>
->> 删除工作空间改动代码，撤销 `commit`，撤销 `git add .`
->>
->>注意完成这个操作后，会删除工作空间代码！！！恢复到上一次的 `commit` 状态。慎重！！！
+> 这个为默认参数，`git reset --mixed HEAD^` 和 `git reset HEAD^` 效果是一样的。
+>
+> `--soft`
+>
+> 不删除工作空间改动代码，撤销 `commit`，不撤销 `git add .`
+>
+> `--hard`
+>
+> 删除工作空间改动代码，撤销 `commit`，撤销 `git add .`
+>
+>注意完成这个操作后，会删除工作空间代码！！！恢复到上一次的 `commit` 状态。慎重！！！
