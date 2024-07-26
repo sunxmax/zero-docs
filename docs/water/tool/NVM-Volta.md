@@ -4,8 +4,11 @@ Volta 和 NVM 都是用于管理 Node.js 版本的工具
 
 ## NVM
 
-**安装**  
-  
+**安装**
+
+[链接](https://github.com/nvm-sh/nvm)
+
+::: details 安装详情
 > 安裝NVM之前，一律建议您从系统中移除任何现有的 `Node.js` 或 `npm` 安裝，因为不同类型的安装可能导致奇怪且困惑的冲突。  
   
 1. Run `npm cache clean --force`  
@@ -26,7 +29,9 @@ Volta 和 NVM 都是用于管理 Node.js 版本的工具
 > 这包括刪除任何现有的 `nodejs` 安裝目录 (例如，可能会保留的 "C:\Program Files\nodejs" ) 。  
 > `NVM` 产生的连接将不会覆盖现有的（甚至是空的）安装目录。 https://stackoverflow.com/questions/20711240/how-to-completely-remove-node-js-from-windows  
 > 如需移除先前安裝的说明，請參閱如何從 `Windows` 完全移除 `node.js`。 )
-  
+
+:::
+
 **使用**
   
 1. 确保卸载系统中的 `nodejs`  
@@ -41,11 +46,18 @@ Volta 和 NVM 都是用于管理 Node.js 版本的工具
     nvm npm_mirror https://npmmirror.com/mirrors/npm/
     nvm node_mirror https://npmmirror.com/mirrors/node/
     ```
-4. `nvm instal version`  
-5. `nvm use version`  
-6. `nvm list`  
-7. `nvm uninstall version`
+4. 常用命令
 
+   ```shell
+   # 安装 node 版本
+   nvm install version
+   # 卸载对应版本
+   nvm uninstall version
+   # 使用对应版本
+   nvm use version
+   # 查看已安装
+   nvm list
+   ```
 
 ## Volta
 
@@ -53,7 +65,7 @@ Volta 和 NVM 都是用于管理 Node.js 版本的工具
 
 [详见](https://volta.sh/)
 
-**使用**
+**常见命令**
 
 ```shell
 # volta 版本
@@ -68,6 +80,4 @@ volta install yarn@lastet
 
 # volta pin 命令将更新项目的 package.json 文件以使用选定版本的工具。
 volta pin node@10.5.0
-
-
 ```
