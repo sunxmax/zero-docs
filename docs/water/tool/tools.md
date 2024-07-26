@@ -80,17 +80,11 @@ https://www.craft.do/
 
 **金克拉**
 
-> 最低套餐：￥10.8/moth
-> 146GB/month
-
 [链接](https://jinkela.bar/auth/register?code=SlJB)
 
 [Github](https://github.com/layonhands/jinkela)
 
 **mosucloud**
-
-> 最低套餐：￥48/6moth
-> 24GB/month
 
 [链接](https://aff.mosucloud.host/aff.php?aff=1499)
 
