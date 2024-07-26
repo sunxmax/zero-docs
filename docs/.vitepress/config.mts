@@ -42,6 +42,7 @@ export default defineConfig({
                         {text: 'Nginx', link: '/water/tool/Nginx'},
                         {text: 'Git', link: '/water/tool/Git'},
                         {text: 'NVM/Volta', link: '/water/tool/NVM-Volta'},
+                        {text: '常用工具', link: '/water/tool/tools'},
 
                     ]
                 },
