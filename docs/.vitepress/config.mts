@@ -48,9 +48,9 @@ export default defineConfig({
                     text: '数据库',
                     collapsed: true,
                     items: [
-                        {text: 'Redis', link: '/water/sql/Redis'},
-                        {text: 'SQLite', link: '/water/sql/SQLite'},
-                        {text: 'MongoDB', link: '/water/sql/MongoDB'},
+                        // {text: 'Redis', link: '/water/sql/Redis'},
+                        // {text: 'SQLite', link: '/water/sql/SQLite'},
+                        // {text: 'MongoDB', link: '/water/sql/MongoDB'},
                         {text: 'SQL Server', link: '/water/sql/SQL Server'},
                     ]
                 },
