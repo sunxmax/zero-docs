@@ -51,6 +51,9 @@ export default defineConfig({
                     collapsed: true,
                     items: [
                         {text: 'SQL Server', link: '/water/sql/SQL Server'},
+                        {text: 'SQL Server', link: '/water/sql/MongoDB'},
+                        {text: 'SQL Server', link: '/water/sql/Redis'},
+                        {text: 'SQL Server', link: '/water/sql/SQLite'},
                     ]
                 },
                 {
