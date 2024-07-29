@@ -50,7 +50,7 @@ export default defineConfig({
                     items: [
                         // {text: 'Redis', link: '/water/sql/Redis'},
                         {text: 'SQLite', link: '/water/sql/SQLite'},
-                        // {text: 'MongoDB', link: '/water/sql/MongoDB'},
+                        {text: 'MongoDB', link: '/water/sql/MongoDB'},
                         {text: 'SQL Server', link: '/water/sql/SQL Server'},
                     ]
                 },
