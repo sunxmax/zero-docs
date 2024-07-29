@@ -11,8 +11,6 @@ export default defineConfig({
         }],
         ["script", { src: "/_vercel/insights/script.js", defer: true }],
         ["script", { src: "/_vercel/speed-insights/script.js", defer: true }],
-
-        ,
     ],
     // <link href="https://fonts.cdnfonts.com/css/jetbrains-mono" rel="stylesheet">
 
@@ -42,7 +40,7 @@ export default defineConfig({
                         {text: 'Nginx', link: '/water/tool/Nginx'},
                         {text: 'Git', link: '/water/tool/Git'},
                         {text: 'NVM/Volta', link: '/water/tool/NVM-Volta'},
-                        {text: '常用工具', link: '/water/tool/tools'},
+                        // {text: '常用工具', link: '/water/tool/tools'},
 
                     ]
                 },
@@ -50,10 +48,10 @@ export default defineConfig({
                     text: '数据库',
                     collapsed: true,
                     items: [
+                        {text: 'Redis', link: '/water/sql/Redis'},
+                        {text: 'SQLite', link: '/water/sql/SQLite'},
+                        {text: 'MongoDB', link: '/water/sql/MongoDB'},
                         {text: 'SQL Server', link: '/water/sql/SQL Server'},
-                        {text: 'SQL Server', link: '/water/sql/MongoDB'},
-                        {text: 'SQL Server', link: '/water/sql/Redis'},
-                        {text: 'SQL Server', link: '/water/sql/SQLite'},
                     ]
                 },
                 {
