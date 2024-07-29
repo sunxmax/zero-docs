@@ -45,17 +45,22 @@
 
 ### 索引
 
-**单一索引**
+[//]: # (**单一索引**)
 
-![](https://www.mongodb.com/docs/v3.6/_images/index-ascending.bakedsvg.svg)
+[//]: # ()
+[//]: # (![]&#40;https://www.mongodb.com/docs/v3.6/_images/index-ascending.bakedsvg.svg&#41;)
 
-**复合索引**
+[//]: # ()
+[//]: # (**复合索引**)
 
-![](https://www.mongodb.com/docs/v3.6/_images/index-compound-key.bakedsvg.svg)
+[//]: # ()
+[//]: # (![]&#40;https://www.mongodb.com/docs/v3.6/_images/index-compound-key.bakedsvg.svg&#41;)
 
-**多键索引**
+[//]: # ()
+[//]: # (**多键索引**)
 
-![](https://www.mongodb.com/docs/v3.6/_images/index-multikey.bakedsvg.svg)
+[//]: # ()
+[//]: # (![]&#40;https://www.mongodb.com/docs/v3.6/_images/index-multikey.bakedsvg.svg&#41;)
 
 ### 聚合
 
@@ -67,7 +72,7 @@ MongoDB 的聚合管道（Pipeline）将 MongoDB 文档在一个阶段（Stage�
 
 表达式：处理输入文档并输出。表达式是无状态的，只能用于计算当前聚合管道的文档，不能处理其它的文档。
 
-![](https://www.mongodb.com/docs/v3.6/_images/aggregation-pipeline.bakedsvg.svg)
+[//]: # (![]&#40;https://www.mongodb.com/docs/v3.6/_images/aggregation-pipeline.bakedsvg.svg&#41;)
 
 **聚合管道操作符**
 
@@ -85,7 +90,7 @@ MongoDB 的聚合管道（Pipeline）将 MongoDB 文档在一个阶段（Stage�
 
 #### Map Reduce
 
-![](https://www.mongodb.com/docs/v3.6/_images/map-reduce.bakedsvg.svg)
+[//]: # (![]&#40;https://www.mongodb.com/docs/v3.6/_images/map-reduce.bakedsvg.svg&#41;)
 
 ## 应用
 
