@@ -127,7 +127,7 @@ MongoDB 中聚合主要用于处理数据处理，例如统计平均值、求和
 
 ::: details 详细
 
-> `docker compose up -d` 启动成功后可以浏览器访问 `http://localhost:8081`，进入 `mongo-express` 对 `MongoDB` 进行管理。
+`docker compose up -d` 启动成功后可以浏览器访问 `http://localhost:8081`，进入 `mongo-express` 对 `MongoDB` 进行管理。
 
 ```yaml
 
