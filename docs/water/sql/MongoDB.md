@@ -121,182 +121,99 @@ MongoDB 中聚合主要用于处理数据处理，例如统计平均值、求和
 
 正则表达式类型，用于存储正则表达式。
 
+## 应用
 
-## 索引
+**docker compose 开启 MongoDB 服务**
 
-**单一索引**
+::: details 详细
 
-![](https://www.mongodb.com/docs/v3.6/_images/index-ascending.bakedsvg.svg)
+> `docker compose up -d` 启动成功后可以浏览器访问 <http://localhost:8081>，进入 `mongo-express` 对 `MongoDB` 进行管理。
 
-**复合索引**
+```yaml
 
-![](https://www.mongodb.com/docs/v3.6/_images/index-compound-key.bakedsvg.svg)
+version: '3.1'
 
-**多键索引**
 
-![](https://www.mongodb.com/docs/v3.6/_images/index-multikey.bakedsvg.svg)
+services:
 
-## 聚合
 
-Aggregation Pipeline 
+  mongo:
 
-> 类似于将 SQL 中的 group by + order by + left join ... 等操作管道化。
+    image: mongo
 
-MongoDB 的聚合管道（Pipeline）将 MongoDB 文档在一个阶段（Stage）处理完毕后将结果传递给下一个阶段（Stage）处理。阶段（Stage）操作是可以重复的。
+    container_name: mongodb
 
-表达式：处理输入文档并输出。表达式是无状态的，只能用于计算当前聚合管道的文档，不能处理其它的文档。
+    restart: always
 
-![](https://www.mongodb.com/docs/v3.6/_images/aggregation-pipeline.bakedsvg.svg)
+    ports:
 
-**聚合管道操作符**
+      - "27017:27017"
 
-**$project**
+    environment:
 
-可以从文档中选择想要的字段，和不想要的字段（指定的字段可以是来自输入文档或新计算字段的现有字段，也可以通过管道表达式进行一些复杂的操作，例如数学操作，日期操作，字符串操作，逻辑操作。
+      MONGO_INITDB_ROOT_USERNAME: root
 
-**$match**
+      MONGO_INITDB_ROOT_PASSWORD: 123456
 
-用于过滤数据，只输出符合条件的文档。$match使用MongoDB的标准查询操作。
 
-**$limit**
+  mongo-express:
 
-用来限制MongoDB聚合管道返回的文档数。
+    image: mongo-express
 
-**$skip**
+    container_name: mongo-express
 
-在聚合管道中跳过指定数量的文档，并返回余下的文档。
+    restart: always
 
-**$unwind**
+    ports:
 
-将文档中的某一个数组类型字段拆分成多条，每条包含数组中的一个值。
+      - "8081:8081"
 
-**$group**
+    environment:
 
-将集合中的文档分组，可用于统计结果。
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
 
-**$sort**
+      ME_CONFIG_MONGODB_ADMINPASSWORD: 123456
 
-将输入文档排序后输出。
+      ME_CONFIG_MONGODB_URL: mongodb://root:123456@mongo:27017/
 
-**$geoNear**
+```
+:::
 
-输出接近某一地理位置的有序文档。
 
-**$bucket**
+**SpringBoot 种调用 API**
 
-分组（分桶）计算。
+1. 添加 maven 依赖
 
-**$facet**
+    ```xml
+    
+    <dependency>
+    
+      <groupId>org.springframework.boot</groupId>
+    
+      <artifactId>spring-boot-starter-data-mongodb</artifactId>
+    
+    </dependency>
+    
+    ```
 
-多次分组计算。
+2. 配置 `application.yml`
 
-**$out**
-
-将结果集输出，必须是Pipeline最后一个Stage。
-
-
-#### Map Reduce
-
-
-[//]: # (![](https://www.mongodb.com/docs/v3.6/_images/map-reduce.bakedsvg.svg))
-
-[//]: # (## 应用)
-
-[//]: # ()
-[//]: # (### docker compose 开启 MongoDB 服务)
-
-[//]: # ()
-[//]: # (```yaml)
-
-[//]: # (version: '3.1')
-
-[//]: # ()
-[//]: # (services:)
-
-[//]: # ()
-[//]: # (  mongo:)
-
-[//]: # (    image: mongo)
-
-[//]: # (    container_name: mongodb)
-
-[//]: # (    restart: always)
-
-[//]: # (    ports:)
-
-[//]: # (      - "27017:27017")
-
-[//]: # (    environment:)
-
-[//]: # (      MONGO_INITDB_ROOT_USERNAME: root)
-
-[//]: # (      MONGO_INITDB_ROOT_PASSWORD: 123456)
-
-[//]: # ()
-[//]: # (  mongo-express:)
-
-[//]: # (    image: mongo-express)
-
-[//]: # (    container_name: mongo-express)
-
-[//]: # (    restart: always)
-
-[//]: # (    ports:)
-
-[//]: # (      - "8081:8081")
-
-[//]: # (    environment:)
-
-[//]: # (      ME_CONFIG_MONGODB_ADMINUSERNAME: root)
-
-[//]: # (      ME_CONFIG_MONGODB_ADMINPASSWORD: 123456)
-
-[//]: # (      ME_CONFIG_MONGODB_URL: mongodb://root:123456@mongo:27017/)
-
-[//]: # (```)
-
-[//]: # ()
-[//]: # (> `docker compose up -d` 启动成功后可以浏览器访问 <http://localhost:8081>，进入 `mongo-express` 对 `MongoDB` 进行管理。)
-
-[//]: # ()
-[//]: # (### SpringBoot 种调用 API)
-
-[//]: # ()
-[//]: # (**添加 maven 依赖**)
-
-[//]: # ()
-[//]: # (```xml)
-
-[//]: # (<dependency>)
-
-[//]: # (  <groupId>org.springframework.boot</groupId>)
-
-[//]: # (  <artifactId>spring-boot-starter-data-mongodb</artifactId>)
-
-[//]: # (</dependency>)
-
-[//]: # (```)
-
-[//]: # ()
-[//]: # (**配置 `application.yml`**)
-
-[//]: # ()
-[//]: # (```yaml)
-
-[//]: # (spring:)
-
-[//]: # (  data:)
-
-[//]: # (    mongodb:)
-
-[//]: # (      host: localhost)
-
-[//]: # (      port: 27017)
-
-[//]: # (      database: demo)
-
-[//]: # (      username: root)
-
-[//]: # (      password: 123456)
-
-[//]: # (```)
+    ```yaml
+    
+    spring:
+    
+      data:
+    
+        mongodb:
+    
+          host: localhost
+    
+          port: 27017
+    
+          database: demo
+    
+          username: root
+    
+          password: 123456
+    
+    ```
