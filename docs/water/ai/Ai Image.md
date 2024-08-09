@@ -9,3 +9,21 @@ CG手绘风格，五官精致，帅气女孩，短裙，面部打光，面对镜
 ```text
 鹦鹉，纯色背景，插画风格
 ```
+
+```l
+M = 800000 \times \frac{0.00325(1+0.00325)^{360}}{(1+0.00325)^{360}-1} \\
+M_{\text{reduce}} = 500000 \times \frac{0.00325(1+0.00325)^{360}}{(1+0.00325)^{360}-1} \\
+I_{\text{reduce}} = M_{\text{reduce}} \times 360 - 500000 \\
+I_{\text{shorten}} = M \times n_{\text{shorten}} - 500000 \\
+\Delta I = I_{\text{reduce}} - I_{\text{shorten}}
+M = 800000 \times \frac{0.00325(1+0.00325)^{360}}{(1+0.00325)^{360}-1} \\
+M_{\text{reduce}} = 500000 \times \frac{0.00325(1+0.00325)^{360}}{(1+0.00325)^{360}-1} \\
+I_{\text{reduce}} = M_{\text{reduce}} \times 360 - 500000 \\
+I_{\text{shorten}} = M \times n_{\text{shorten}} - 500000 \\
+\Delta I = I_{\text{reduce}} - I_{\text{shorten}}
+M = 800000 \times \frac{0.00325(1+0.00325)^{360}}{(1+0.00325)^{360}-1} \\
+M_{\text{reduce}} = 500000 \times \frac{0.00325(1+0.00325)^{360}}{(1+0.00325)^{360}-1} \\
+I_{\text{reduce}} = M_{\text{reduce}} \times 360 - 500000 \\
+I_{\text{shorten}} = M \times n_{\text{shorten}} - 500000 \\
+\Delta I = I_{\text{reduce}} - I_{\text{shorten}}
+```
