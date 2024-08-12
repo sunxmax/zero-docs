@@ -119,6 +119,10 @@ ffmpeg -i video.mp4 -i audio.aac -c:v copy -af "volume=1.5" output.mp4
 ```bash
 # 例如，使用以下命令将图片水印添加到视频的左上角
 ffmpeg -i input.mp4 -i watermark.png -filter_complex "overlay=10:10" output.mp4
+
+# -i watermark.png：指定要叠加的水印图片 watermark.png。
+# -filter_complex "overlay=10:10"：应用 overlay 滤镜，将水印图片叠加在视频的坐标 (10, 10) 处，即视频左上角向右和向下偏移 10 像素的位置。
+# output.mp4：输出的带有水印的视频文件名为 output.mp4。
 ```
 ### 转换视频分辨率
 
@@ -132,5 +136,12 @@ ffmpeg -i input.mp4 -vf scale=1280:720 output.mp4
 ```bash
 # 可以将视频片段转换为 GIF 动画
 ffmpeg -i input.mp4 -vf "fps=10,scale=320:-1:flags=lanczos" -ss 00:00:10 -t 5 output.gif
+
+# -vf 是视频滤镜选项，表示对输入视频应用一系列滤镜。
+# fps=10：这个滤镜设置输出帧率为每秒 10 帧 (Frames Per Second)，即从视频中每秒提取 10 帧图像。
+# scale=320:-1：这是一个缩放滤镜，将视频缩放到宽度 320 像素，高度设置为 -1，意味着高度会按比例自动调整，以保持原始的宽高比不变。
+# flags=lanczos：指定使用 Lanczos 算法进行缩放。Lanczos 是一种高级的图像缩放算法，能够在缩放时保持较高的图像质量。
+# -ss 用于指定从视频的哪个时间点开始处理。这里表示从视频的第 10 秒处开始提取帧。
+# -t 用于设置输出的持续时间。这里表示提取 5 秒长的视频片段。结合 -ss 参数，这个命令会从视频的第 10 秒开始提取，持续 5 秒的片段。
 ```
 
