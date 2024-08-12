@@ -127,7 +127,7 @@ ffmpeg -i input.mp4 -i watermark.png -filter_complex "overlay=10:10" output.mp4
 ffmpeg -i input.mp4 -vf scale=1280:720 output.mp4
 ```
 
-**生成 GIF**
+### 生成 GIF
 
 ```bash
 # 可以将视频片段转换为 GIF 动画
