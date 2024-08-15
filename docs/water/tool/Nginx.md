@@ -8,13 +8,13 @@
 
 Nginx 的配置结构图
 
-```  
-main # 全局配置  
-├── events # 配置网络连接  
-├── http # 配置代理、缓存、日志等  
-│ ├── upstream # 配置负载均衡  
+```
+main # 全局配置
+├── events # 配置网络连接
+├── http # 配置代理、缓存、日志等
+│ ├── upstream # 配置负载均衡
 │ ├── server # 配置虚拟主机，可以有多个 server
-│ ├── server  
+│ ├── server
 │ │ ├── location # 用于匹配 URI（URL 是 URI 的一种），可以有多个 location
 │ │ ├── location  
 │ │ └── ...  

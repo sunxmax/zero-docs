@@ -74,6 +74,30 @@ ffmpeg -i input.mp4 -vcodec h264 -acodec mp2 output.mp4
 ffmpeg -i input.mp4 -ss 00:01:00 -t 00:00:30 -c copy output.mp4
 ```
 
+### 切成图片
+
+```bash
+# 将视频的每一帧都保存为一张图片
+# frame_%04d.png: 输出图片文件名格式，这里会生成如 frame_0001.png, frame_0002.png 等文件
+ffmpeg -i input.mp4 frame_%04d.png
+
+# 每秒提取一帧，可以使用 -r 参数设置帧率（-r 1: 设置输出帧率为每秒 1 帧）
+ffmpeg -i input.mp4 -r 1 frame_%04d.png
+
+# 每 n 秒提取一帧，可以使用复杂的滤镜命令
+ffmpeg -i input.mp4 -vf "fps=1/5" frame_%04d.png
+
+# 提取视频某一时间段的帧
+# -ss 00:00:30: 从 30 秒开始提取
+# -to 00:01:00: 提取到 1 分钟结束
+ffmpeg -ss 00:00:30 -to 00:01:00 -i input.mp4 frame_%04d.png
+
+# 提取特定帧（如每 100 帧）
+# select=not(mod(n\,100)): 每 100 帧选一帧
+ffmpeg -i input.mp4 -vf "select=not(mod(n\,100)),setpts=N/FRAME_RATE/TB" -vsync vfr frame_%04d.png
+
+```
+
 ### 合并视频
 
 合并多个视频文件。首先创建一个包含文件列表的文本文件（如 `filelist.txt`），文件内容如下：
@@ -144,4 +168,6 @@ ffmpeg -i input.mp4 -vf "fps=10,scale=320:-1:flags=lanczos" -ss 00:00:10 -t 5 ou
 # -ss 用于指定从视频的哪个时间点开始处理。这里表示从视频的第 10 秒处开始提取帧。
 # -t 用于设置输出的持续时间。这里表示提取 5 秒长的视频片段。结合 -ss 参数，这个命令会从视频的第 10 秒开始提取，持续 5 秒的片段。
 ```
+
+
 
