@@ -31,27 +31,27 @@
 
 **分区的劣势**
 
-- 涉及多个key的操作通常是不被支持的。举例来说，当两个set映射到不同的redis实例上时，你就不能对这两个set执行交集操作。
-- 涉及多个key的redis事务不能使用。
-- 当使用分区时，数据处理较为复杂，比如你需要处理多个rdb/aof文件，并且从多个实例和主机备份持久化文件。
-- 增加或删除容量也比较复杂。redis集群大多数支持在运行时增加、删除节点的透明数据平衡的能力，但是类似于客户端分区、代理等其他系统则不支持这项特性。然而，一种叫做presharding的技术对此是有帮助的。
+- 涉及多个 key 的操作通常是不被支持的。举例来说，当两个 set 映射到不同的 redis 实例上时，你就不能对这两个set执行交集操作。
+- 涉及多个 key 的 redis 事务不能使用。
+- 当使用分区时，数据处理较为复杂，比如你需要处理多个 rdb/aof 文件，并且从多个实例和主机备份持久化文件。
+- 增加或删除容量也比较复杂。redis 集群大多数支持在运行时增加、删除节点的透明数据平衡的能力，但是类似于客户端分区、代理等其他系统则不支持这项特性。然而，一种叫做 presharding 的技术对此是有帮助的。
 :::
 
 ## 特点
 
-### 高性能
+**高性能**
 
 `Redis` 会将所有数据都存放在内存中，因此具有高性能的读写能力。
 
-### 原子性
+**原子性**
 
 `Redis` 的所有操作都是原子性的，同时Redis还支持对几个操作全并后的原子性执行。
 
-### 持久化
+**持久化**
 
 `Redis` 可以将内存的数据利用快照和日志的形式保存到硬盘上，支持 `RDB`，`AOF` 等持久化方式。
 
-### 附加功能
+**附加功能**
 
 `Redis` 提供了**键过期**、**发布订阅**、**事务**、**流水线**、**Lua脚本**等附加功能。
   
@@ -63,7 +63,7 @@
 
 ![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/17d01f95f18e4bf395e1c5f40bd0ba23~tplv-k3u1fbpfcp-zoom-in-crop-mark:1304:0:0:0.awebp)
 
-### key
+**key**
 
 ```shell
 > keys *
@@ -72,7 +72,7 @@
 3) "key-string"
 ```
 
-### String
+**String**
 
 ```shell
 > set key-string "hello world"
@@ -82,7 +82,7 @@
 "hello world"
 ```
 
-### Hash
+**Hash**
 
 ```shell
 > HMSET key-hash field1 apple field2 orange field3 banana
@@ -103,7 +103,7 @@
 (integer) 1
 ```
 
-### List
+**List**
 
 ```shell
 > LPUSH key-list element1
@@ -121,7 +121,7 @@
 3) "element3"
 ```
 
-### Set
+**Set**
 
 ```shell
 > sadd key-set one two three
@@ -133,7 +133,7 @@
 3) "one"
 ```
 
-### ZSet
+**ZSet**
 
 `zset` 即 `Sort Set`
 
