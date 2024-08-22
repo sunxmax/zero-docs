@@ -88,7 +88,7 @@ export default defineConfig({
 
         outline: {
             label: '页面导航',
-            level: [1,2]
+            level: [2,2]
         },
 
         footer: {
