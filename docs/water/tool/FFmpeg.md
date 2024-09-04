@@ -72,6 +72,16 @@ ffmpeg -i input.mp4 -vcodec h264 -acodec mp2 output.mp4
 ```bash
 # 截取视频的特定片段。例如，从 00:01:00 开始，截取 30 秒的视频
 ffmpeg -i input.mp4 -ss 00:01:00 -t 00:00:30 -c copy output.mp4
+
+# 基于时间戳的截取,指定起始和结束时间来截取视频片段
+ffmpeg -i input.mp4 -ss 00:01:30 -to 00:02:00 -c copy output.mp4
+
+# 指定帧数截取
+ffmpeg -i input.mp4 -vf "select='between(n,30,300)'" -vsync vfr output.mp4
+
+# 使用帧率截取
+ffmpeg -i input.mp4 -r 1 -ss 00:01:30 -t 00:00:10 output.mp4
+
 ```
 
 ### 切成图片

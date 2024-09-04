@@ -41,6 +41,7 @@ export default defineConfig({
                         {text: 'Git', link: '/water/tool/Git'},
                         {text: 'NVM/Volta', link: '/water/tool/NVM-Volta'},
                         {text: 'FFmpeg', link: '/water/tool/FFmpeg'},
+                        {text: 'YT-DLP', link: '/water/tool/YT-DLP'},
                         // {text: '常用工具', link: '/water/tool/tools'},
 
 

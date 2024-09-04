@@ -4,6 +4,17 @@
 
 [地址](https://github.com/yt-dlp/yt-dlp)
 
-## 安装使用
+## 安装
 
 
+## 使用
+
+**列出 URL 下所有资源
+```shell
+yt-dlp -F --list-formats url
+```
+
+**下载 ID 的指定文件**
+```shell
+yt-dlp -fID+ID url
+```
