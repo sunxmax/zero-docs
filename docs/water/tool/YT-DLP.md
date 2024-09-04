@@ -9,12 +9,16 @@
 
 ## 使用
 
-**列出 URL 下所有资源
+**列出 URL 下所有资源**
 ```shell
-yt-dlp -F --list-formats url
+yt-dlp -F --list-formats [URl]
+yt-dlp -F https://xxx.xx.com/xx
 ```
 
 **下载 ID 的指定文件**
 ```shell
-yt-dlp -fID+ID url
+yt-dlp -f[ID] [URL]
+
+# 如
+yt-dlp -f315+251 https://xxx.xx.com/xx
 ```
