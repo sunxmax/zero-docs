@@ -1,4 +1,11 @@
 import {defineConfig} from 'vitepress'
+import { RSSOptions, RssPlugin } from 'vitepress-plugin-rss'
+
+const RSS: RSSOptions = {
+    title: '粥里有勺糖',
+    baseUrl:'https://zero-docs.vercel.app',
+    copyright: 'Copyright (c) 2018-present, 粥里有勺糖',
+}
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
