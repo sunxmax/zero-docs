@@ -1,10 +1,11 @@
 import {defineConfig} from 'vitepress'
-import { RSSOptions, RssPlugin } from 'vitepress-plugin-rss'
+import {RSSOptions, RssPlugin} from 'vitepress-plugin-rss'
 
 const RSS: RSSOptions = {
     title: 'zero',
-    baseUrl:'https://zero-docs.vercel.app',
+    baseUrl: 'https://zero-docs.vercel.app',
     copyright: 'Copyright (c) 2021-present, zero',
+    description: 'feedId:67840654578173952+userId:67737338736758784'
 }
 
 // https://vitepress.dev/reference/site-config
@@ -16,8 +17,8 @@ export default defineConfig({
             rel: 'stylesheet',
             href: 'https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Noto+Sans+SC:wght@100..900&display=swap'
         }],
-        ["script", { src: "/_vercel/insights/script.js", defer: true }],
-        ["script", { src: "/_vercel/speed-insights/script.js", defer: true }],
+        ["script", {src: "/_vercel/insights/script.js", defer: true}],
+        ["script", {src: "/_vercel/speed-insights/script.js", defer: true}],
     ],
     // <link href="https://fonts.cdnfonts.com/css/jetbrains-mono" rel="stylesheet">
 
@@ -96,7 +97,7 @@ export default defineConfig({
 
         outline: {
             label: '页面导航',
-            level: [2,3]
+            level: [2, 3]
         },
 
         footer: {
@@ -129,7 +130,9 @@ export default defineConfig({
         },
     },
 
-    vite:{
-        plugins: [RssPlugin(RSS)]
+    vite: {
+        plugins: [
+            RssPlugin(RSS)
+        ]
     }
 })
