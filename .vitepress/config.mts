@@ -29,28 +29,28 @@ export default defineConfig({
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
         logo: '/logo.svg',
-        siteTitle: false,
+        siteTitle: 'ZERO',
         nav: [
             {text: '首页', link: '/'},
-            {text: '拾遗', link: '/water/tool/Arthas'},
+            {text: '拾遗', link: '/step/tool/Arthas'},
             {text: '时光', link: '/time/index'},
         ],
 
         sidebar: {
-            '/water/': [
+            '/step/': [
                 {
                     text: '工具',
                     collapsed: true,
                     items: [
-                        {text: 'Arthas', link: '/water/tool/Arthas'},
-                        {text: 'Homebrew', link: '/water/tool/Homebrew'},
-                        {text: 'Docker', link: '/water/tool/Docker'},
-                        {text: 'Nginx', link: '/water/tool/Nginx'},
-                        {text: 'Git', link: '/water/tool/Git'},
-                        {text: 'NVM/Volta', link: '/water/tool/NVM-Volta'},
-                        {text: 'FFmpeg', link: '/water/tool/FFmpeg'},
-                        {text: 'YT-DLP', link: '/water/tool/YT-DLP'},
-                        // {text: '常用工具', link: '/water/tool/tools'},
+                        {text: 'Arthas', link: '/step/tool/Arthas'},
+                        {text: 'Homebrew', link: '/step/tool/Homebrew'},
+                        {text: 'Docker', link: '/step/tool/Docker'},
+                        {text: 'Nginx', link: '/step/tool/Nginx'},
+                        {text: 'Git', link: '/step/tool/Git'},
+                        {text: 'NVM/Volta', link: '/step/tool/NVM-Volta'},
+                        {text: 'FFmpeg', link: '/step/tool/FFmpeg'},
+                        {text: 'YT-DLP', link: '/step/tool/YT-DLP'},
+                        // {text: '常用工具', link: '/step/tool/tools'},
 
 
                     ]
@@ -59,17 +59,17 @@ export default defineConfig({
                     text: '数据库',
                     collapsed: true,
                     items: [
-                        {text: 'Redis', link: '/water/sql/Redis'},
-                        {text: 'SQLite', link: '/water/sql/SQLite'},
-                        {text: 'MongoDB', link: '/water/sql/MongoDB'},
-                        {text: 'SQL Server', link: '/water/sql/SQL Server'},
+                        {text: 'Redis', link: '/step/sql/Redis'},
+                        {text: 'SQLite', link: '/step/sql/SQLite'},
+                        {text: 'MongoDB', link: '/step/sql/MongoDB'},
+                        {text: 'SQL Server', link: '/step/sql/SQL Server'},
                     ]
                 },
                 {
                     text: '消息队列',
                     collapsed: true,
                     items: [
-                        {text: 'Kafka', link: '/water/mq/kafka'},
+                        {text: 'Kafka', link: '/step/mq/kafka'},
                     ]
                 },
             ],

@@ -9,7 +9,7 @@ hero:
   actions:
     - theme: brand
       text: 拾遗
-      link: /water/tool/Arthas
+      link: /step/tool/Arthas
     - theme: alt
       text: 时光
       link: /time/index
