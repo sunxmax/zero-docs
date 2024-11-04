@@ -73,7 +73,15 @@ export default defineConfig({
                     ]
                 },
             ],
-            'time': [],
+            '/time/': [
+                {
+                    text: 'Follow',
+                    collapsed: true,
+                    items: [
+                        {text: 'Airdrop', link: '/time/follow-airdrop'},
+                    ]
+                }
+            ],
         },
 
         lastUpdated: {
