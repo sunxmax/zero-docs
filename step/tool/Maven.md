@@ -28,7 +28,7 @@
 在 Windows 上启动 Nexus 服务有两种主要方式：
 
 1. 直接运行启动命令：
-   ```powershell
+   ```shell
    # 切换到 Nexus bin 目录
    cd xxx\nexus-3.x.x\bin
    
@@ -44,7 +44,7 @@
    ::: details 服务方式启动详解
    如果要以服务方式运行，需要先注册服务：
    
-   ```powershell
+   ```shell
    # 以管理员权限运行 PowerShell
    cd xxx\nexus-3.x.x\bin
    
@@ -57,7 +57,7 @@
    
    安装为服务后，也可以使用 PowerShell 命令来控制服务：
    
-   ```powershell
+   ```shell
    Start-Service nexus    # 启动服务
    Stop-Service nexus     # 停止服务
    Restart-Service nexus  # 重启服务
