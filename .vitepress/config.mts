@@ -42,17 +42,15 @@ export default defineConfig({
                     text: '工具',
                     collapsed: true,
                     items: [
-                        {text: 'Arthas', link: '/step/tool/Arthas'},
-                        {text: 'Homebrew', link: '/step/tool/Homebrew'},
-                        {text: 'Docker', link: '/step/tool/Docker'},
-                        {text: 'Nginx', link: '/step/tool/Nginx'},
                         {text: 'Git', link: '/step/tool/Git'},
-                        {text: 'NVM/Volta', link: '/step/tool/NVM-Volta'},
+                        {text: 'Nginx', link: '/step/tool/Nginx'},
+                        {text: 'Maven', link: '/step/tool/Maven'},
+                        {text: 'Docker', link: '/step/tool/Docker'},
+                        {text: 'Arthas', link: '/step/tool/Arthas'},
                         {text: 'FFmpeg', link: '/step/tool/FFmpeg'},
                         {text: 'YT-DLP', link: '/step/tool/YT-DLP'},
-                        // {text: '常用工具', link: '/step/tool/tools'},
-
-
+                        {text: 'Homebrew', link: '/step/tool/Homebrew'},
+                        {text: 'NVM/Volta', link: '/step/tool/NVM-Volta'},
                     ]
                 },
                 {
