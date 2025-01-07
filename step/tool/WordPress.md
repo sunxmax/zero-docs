@@ -19,7 +19,7 @@
 6. 启动 php-cgi（用于通过 FastCGI 协议与 Web 服务器（如 Nginx）进行 PHP 请求处理。）
    > 在命令行中输入 `php-cgi.exe -b 127.0.0.1:9000` 启动 php-cgi，也可以通过将其加入 Windows 服务来启动。
    >
-   > 启动 php-cgi 后，可以通过访问 http://localhost:9000/phpinfo.php 来验证 php-cgi 是否启动成功。
+   > 启动 php-cgi 后，可以通过访问 [验证地址](http://localhost:9000/phpinfo.php) 来验证 php-cgi 是否启动成功。
    >
    > 关于 Nginx 的相关配置后面会介绍。
    
@@ -61,4 +61,4 @@
 
 1. [下载 WordPress 压缩包](https://cn.wordpress.org/download/releases/)，解压到服务器的web目录下。例如：E:/www/wordpress
 2. 已配置好的 Nginx （上述步骤）和 PHP （上述步骤）
-3. 浏览器打开 http://localhost/wordpress 进入安装界面，根据提示进行安装。
+3. 浏览器打开 [站点地址](http://localhost/wordpress) 进入安装界面，根据提示进行安装。
