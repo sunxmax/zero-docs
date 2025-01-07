@@ -52,5 +52,5 @@ echo "Hello, World!";
 ```bash
 php -S localhost:8000
 ```
-然后访问 http://localhost:8000/hello.php
+然后访问 `http://localhost:8000/hello.php`
 :::
