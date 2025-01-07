@@ -51,6 +51,8 @@ export default defineConfig({
                         {text: 'YT-DLP', link: '/step/tool/YT-DLP'},
                         {text: 'Homebrew', link: '/step/tool/Homebrew'},
                         {text: 'NVM/Volta', link: '/step/tool/NVM-Volta'},
+                        {text: 'WordPress', link: '/step/tool/WordPress'},
+
                     ]
                 },
                 {
