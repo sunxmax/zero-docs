@@ -32,7 +32,7 @@ export default defineConfig({
         siteTitle: 'ZERO',
         nav: [
             {text: '首页', link: '/'},
-            {text: '拾遗', link: '/step/tool/Arthas'},
+            {text: '拾遗', link: '/step/tool'},
             {text: '时光', link: '/time/index'},
         ],
 
